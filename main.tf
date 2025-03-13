@@ -12,7 +12,7 @@ resource "aws_instance" "ec2_instance" {
   # Additional instance configurations can be added here, such as security groups, subnet, etc.
   
   tags = {
-    Name = "master_node-${count.index + 3}"
+    Name = "master_node-${count.index + 1}"
   }
 }
 
