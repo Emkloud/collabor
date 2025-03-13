@@ -12,12 +12,12 @@ resource "aws_instance" "ec2_instance" {
   # Additional instance configurations can be added here, such as security groups, subnet, etc.
   
   tags = {
-    Name = "master_node-${count.index + 1}"
+    Name = "master_node-${count.index + 3}"
   }
 }
 
 resource "aws_s3_bucket" "funtab_bucket" {
-  bucket = "my-tf-test-bucket"
+  bucket = "old_new_knowledge_bucket"
 
   tags = {
     Name        = "My bucket"
