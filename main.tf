@@ -1,26 +1,26 @@
 provider "aws" {
-  region = "us-west-2"
+  region = "us-east-1"
 }
 
 resource "aws_instance" "ec2_instance" {
-  count = 1  # Creating four EC2 instances
+  count = 5  # Creating four EC2 instances
 
-  ami           = "ami-051f8a213df8bc089"  # Replace with your desired AMI
+  ami           = "ami-08b5b3a93ed654d19"  # Replace with your desired AMI
   instance_type = "t2.micro"               # Replace with your desired instance type
-  key_name      = "new"  # Use the created key pair
+  key_name      = "testing"  # Use the created key pair
 
   # Additional instance configurations can be added here, such as security groups, subnet, etc.
   
   tags = {
-    Name = "master_node-${count.index + 1}"
+    Name = "lesson-${count.index + 1}"
   }
 }
 
-resource "aws_s3_bucket" "example" {
-  bucket = "my-tf-test-bucket"
+resource "aws_s3_bucket" "bisola_bucket" {
+  bucket = "old-rugged-bucket"
 
   tags = {
-    Name        = "My bucket"
+    Name        = "London_bucket"
     Environment = "Dev"
   }
 }
